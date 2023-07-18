@@ -15,10 +15,8 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, './src/index.html'), // шаблон
-            filename: 'index.html', // название выходного файла
-        }),
-        new HtmlWebpackPlugin({
-            template: path.resolve(__dirname, './src/yandex_d790d6507a3c5cd6.html'), // шаблон
+            filename: 'index.html',
+            template: path.resolve(__dirname, './src/yandex_d790d6507a3c5cd6.html'),
             filename: 'yandex_d790d6507a3c5cd6.html', // название выходного файла
         }),
         new FaviconsWebpackPlugin(),
