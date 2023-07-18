@@ -1,0 +1,1425 @@
+/* Загрузка шрифтов */
+@font-face {
+    font-family: 'Bitter';
+    src: 
+        local('Bitter-Light'),
+        local('Bitter_Light'),
+        url('/src/font/Bitter/Bitter-Light.woff2') format('woff2'),
+        url('/src/font/Bitter/Bitter-Light.woff') format('woff'),
+        url('/src/font/Bitter/Bitter-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Bitter';
+    src: 
+        local('Bitter-Regular'),
+        local('Bitter_Regular'),
+        url('/src/font/Bitter/Bitter-Regular.woff2') format('woff2'),
+        url('/src/font/Bitter/Bitter-Regular.woff') format('woff'),
+        url('/src/font/Bitter/Bitter-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PlayfairDisplay';
+    src: 
+        local('PlayfairDisplay-Regular'),
+        local('PlayfairDisplay_Regular'),
+        url('/src/font/PlayFair_Display/PlayfairDisplay-Regular.woff2') format('woff2'),
+        url('/src/font/PlayFair_Display/PlayfairDisplay-Regular.woff') format('woff'),
+        url('/src/font/PlayFair_Display/PlayfairDisplay-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PlayfairDisplay';
+    src: 
+        local('PlayfairDisplay-Medium'),
+        local('PlayfairDisplay_Medium'),
+        url('/src/font/PlayFair_Display/PlayfairDisplay-Medium.woff2') format('woff2'),
+        url('/src/font/PlayFair_Display/PlayfairDisplay-Medium.woff') format('woff'),
+        url('/src/font/PlayFair_Display/PlayfairDisplay-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Butler';
+    src: 
+        local('Butler-Medium'),
+        local('Butler_Medium'),
+        url('/src/font/Butler/Butler_Medium.woff2') format('woff2'),
+        url('/src/font/Butler/Butler_Medium.woff') format('woff'),
+        url('/src/font/Butler/Butler_Medium.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    line-height: 1.2;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    /*Плавная прокрутка*/
+    scroll-behavior: smooth;
+}
+
+body {
+    text-rendering: optimizeLegibility;
+    background-color: #ffffff;
+}
+
+/* Настройки шрифтов начало*/
+.title-hero, .subtitle-biography, .title-strengst {
+    font-family: 'PlayfairDisplay', 'Times New Roman', Times, serif;
+}
+
+h2, .description-biography, .list-skills, h3, .list-designer-description, .link-testimonials, .description-hero {
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+}
+
+.text-biography, .text-testimonials, .list-strengts {
+    font-family: 'Bitter', 'Times New Roman', Times, serif;
+}
+
+h2 {
+    font-weight: 700;
+    font-size: 1.25rem;
+}
+
+.subtitle-biography, .title-strengst {
+    font-weight: 500;
+    font-size: 5.375rem;
+    margin: 0;
+}
+
+.description-biography, .list-skills {
+    font-weight: 500;
+    font-size: 1.125rem;
+}
+
+.text-biography {
+    font-weight: 400;
+    font-size: 1.625rem;
+    margin: 0;
+}
+
+h3 {
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.capitalize {
+    text-transform: capitalize;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.link-testimonials {
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+.text-testimonials {
+    font-weight: 400;
+    font-size: 2rem;
+    text-align: center;
+}
+/* Настройки шрифтов конец*/
+
+/* Кнопка навигации и главный заголовок начало */
+.wrapper-nav {
+    width: 100%;
+    max-width: 1065px;
+    padding: 3.8em;
+    /* outline: 1px solid red; */
+}
+
+.header-dropdown {
+    position: relative;
+}
+
+.header-menu-button {
+    /* Скрыть элемент чекбокс */
+    display: none;
+}    
+
+.header-dropdown label {
+    cursor: pointer;
+    background-color: #ffffff;
+    padding: 1em;
+    border-radius: 9px;
+
+    transition: background-color .3s ease;
+
+    &:hover {
+        background-color: #a52a2a10;
+    }
+
+    &:active {
+        background-color: #a52a2a10;
+    }
+}
+
+.item-menu {
+    display: inline-block;
+    list-style: none;
+    padding: 0;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    padding: 1em 1em 0 1em;
+    z-index: 1;
+    width: 50%;
+    top: 80%;
+    left: 25%;
+    /*Добавление эффекта  glassmorphism для выпадающего меню*/
+    background: rgba( 255, 255, 255, 0.25 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 5px );
+    -webkit-backdrop-filter: blur( 5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+
+}
+
+.item-menu-link {
+    position: relative;
+    display: block;
+    width: 100px;
+    height: 83px;
+    font-family: 'Butler', 'Times New Roman', Times, serif;
+    font-size: 2.75rem;
+    font-weight: 400;
+    color: #000000;
+    padding: 0;
+    text-decoration: none;
+
+    &::before {
+        content: '';
+	    position: absolute;
+	    left: 0;
+        bottom: 25px;
+	    width: 0;
+	    height: 1.5px;
+	    background-color: #000000;
+
+        transition: width .3s ease;
+    }
+
+    &:hover:before {
+        width: 100%;
+    }
+}
+
+.header-dropdown :checked ~ .dropdown-content {
+    display: block;
+}
+
+.wrapper-header {
+    /* outline: 3px solid green; */
+    width: 100%;
+    max-width: 1065px;
+}
+
+.header {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.wrapper-hero {
+    /* outline: 2px solid blue; */
+    width: 100%;
+    max-width: 1065px;
+    padding: 19.2em;
+}
+
+.hero {
+    position: relative;
+    background: #f5f5dc url(/src/images/bg-header/bg-header@1x.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0 auto;
+    height: 100%;
+}
+
+.hero-box {
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    width: 56.338%;
+    height: 57.143%;
+}
+
+.title-hero {
+    font-weight: 500;
+    font-size: 5.375rem;
+    margin: 1.25em 0 0 .1em;
+}
+
+.title-hero {
+    animation: focus-in-expand-fwd 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@keyframes focus-in-expand-fwd {
+    0% {
+      letter-spacing: -0.5rem;
+      transform: translateZ(-800px);
+      filter: blur(12px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateZ(0);
+      filter: blur(0);
+      opacity: 1;
+    }
+  }  
+
+.description-hero {
+    font-weight: 500;
+    font-size: 1.25rem;
+    margin: .7em 0 0 .625rem;
+}
+/* Кнопка навигации и главный заголовок конец */
+
+/*Секция Biography используем flex начало*/
+.wrapper-biography {
+    /* outline: 3px solid brown; */
+    width: 100%;
+    max-width: 1175px;
+    max-height: 840px;
+}
+
+.biography {
+    margin: 10em auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: space-between;
+    row-gap: 5px;
+}
+
+.image-biography {
+    max-width: 100%;
+    height: auto;
+    order: 0;
+    width: 47.064%;
+    transition: transform .3s;
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+
+    &:hover {
+        transform: scale(1.1);
+        box-shadow: 0 0 20px 0px rgba(0, 0, 0, .35);
+    }
+}
+
+.title-biography {
+    display: inline-block;
+    transform: rotate(-90deg) translate(-3.5em, -5.2em);
+    order: 1;
+    width: 1.957%;
+}
+
+.subtitle-biography {
+    order: 2;
+    line-height: 1.333;
+    width: 20.426%;
+    padding: 1.6em .1em .1em .1em;
+}
+
+.description-biography {
+    order: 3;
+    width: 40.426%;
+    margin: .3em 0 0 0;
+    padding: 0 .1em 0 .5em;
+}
+
+.list-skills {
+    order: 4;
+    list-style: none;
+    width: 40.426%;
+    margin: 0 0 3em 0;
+    padding: 0 .1em 0 .5em;
+}
+
+.skill {    
+    display: inline-block;
+}
+
+.skill::after {
+    content: ' / ';
+}
+
+.skill:last-child::after {
+    content: '';
+}
+
+.text-biography::before {
+    content: '';
+    position: absolute;
+    top: -18px;
+    left: 6px;
+    display: block;
+    width: 14px;
+    height: 4px;
+    background-color: #000000;
+}
+
+.text-biography {
+    position: relative;
+    order: 5;
+    width: 38.213%;
+    margin: .8em 0 0 0;
+    padding: 0 .1em 0 .45em;
+}
+/*Секция Biography используем flex конец*/
+
+/*Секция Designers начало*/
+.wrapper-designers {
+    /* outline: 2px solid purple; */
+    width: 100%;
+    max-width: 1340px;
+}
+
+.designers {
+    margin: 9.2em auto 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(320px, 1fr));
+    grid-template-rows: 15% 85%;
+    grid-auto-columns: calc(320px - (1rem / 2));
+    column-gap: 25px;
+
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding: 1em;
+}
+
+.designers > * {
+    scroll-snap-align: start;
+}
+
+.title-designers {
+    display: inline-block;
+    transform: rotate(-90deg) translate(14.5em, 1.2em);
+    grid-row: 1;
+    grid-column: 3 / 5;
+}
+
+.container-designer {
+    display: flex;
+    row-gap: 23.5px;
+    flex-direction: column;
+    grid-row: 2 / 3;
+    grid-column: span 1;
+}
+
+.image-designer {
+    max-width: 100%;
+    object-fit: contain;
+    width: fit-content;
+
+    transition: transform 0.25s;
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+
+    &:hover {
+        transform: scale(1.1);
+        box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
+    }
+}
+
+.image-designer-stretched {
+    max-width: 100%;
+    grid-row: 1 / 3;
+    grid-column: span 2;
+    padding-left: 1.6em;
+}
+
+.image-designer-stretched > .designer-description {
+    max-width: 100%;
+    align-self: center;
+    padding-left: 14.5em;
+}
+
+.subtitle-designers {
+    margin: 0;
+    padding: 0;
+}
+
+.list-designer-description {
+    font-weight: 400;
+    font-size: 1rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+ }
+
+.item-list-designer {
+    display: inline-block;
+}
+
+.item-list-designer::after {
+    content: ' / ';
+}
+
+.item-list-designer:last-child::after {
+    content: '';
+}
+
+.item-list-designer:first-child::after {
+    content: '';
+}
+/*Секция Designers конец*/
+
+/*Секция Testimonials используем grid начало*/
+.wrapper-testimonials {
+    /* outline: 3px solid violet; */
+    width: 100%;
+    max-width: 1179px;
+}
+
+.testimonials {
+    margin: 7.8em auto;
+}
+
+.grid-column-1 {
+    display: grid;
+    width: 50%;
+    height: 100%;
+    grid-template-columns: minmax(72px, 1fr) repeat(2, minmax(258.75px, 3fr)) 100%;
+    grid-template-rows: 1fr repeat(3, 3fr);
+    justify-items: center;
+}
+
+.title-testimonials {
+    line-height: 1.15;
+    grid-column: 1 / 3;
+    justify-self: start;
+    padding: 0 .3em;
+}
+
+.rotate {
+    transform: rotate(-90deg);
+    place-self: center center;
+}
+
+.link-testimonials {
+    text-decoration: none;
+    color: #000000;
+    position: relative;
+    display: inline-block;
+    transition: all .3s linear;
+
+    &:hover {
+        color: #a52a2a;
+    }
+
+    &::after, &::before {
+        content: "";
+        background: #a52a2a;
+        position: absolute;
+        width: 0;
+        height: 2px;
+        transition: all .3s linear;
+    }
+
+    &::before {
+        top: 0;
+        left: 0;
+    }
+
+    &::after {
+        top: 100%;
+        right: 0;
+    }
+
+    &:hover:before, &:hover:after{
+        width: 100%;
+    }
+
+    &:focus {
+        color: #a52a2a;
+    }
+
+    &:active {
+        color: #a52a2a;
+    }
+
+}
+
+.link-testimonials, .capitalize {
+    margin: 0;
+}
+
+.wrapper-link {
+    grid-area: 2 / 1 / 2 / 2;
+    display: grid;
+    grid-template-columns: minmax(72px, 1fr);
+    grid-template-rows: repeat(3, minmax(100%, 1fr));
+}
+
+.grid-row-1 {
+    grid-area: 1 / 1 / 2 / 2;
+    margin: 2.5em 1.5em 0 0;
+}
+
+.grid-row-2 {
+    grid-area: 2 / 1 / 3 / 2;
+    margin: .1em 1.5em 0 0;
+}
+
+.grid-row-3 {
+    grid-area: 3 / 1 / 4 / 2;
+    margin: -2.5em 1.5em 0 0;
+}
+
+.image-testimonials-1 {
+    max-width: 100%;
+    grid-area: 2 / 2 / 5 / 4;
+    object-fit: cover;
+    margin: -1.4em 0 0 1em;
+}
+
+.grid-column-2 {
+    grid-area: 2 / 4 / 5 / 5;
+    display: grid;
+    width: 50%;
+    height: 100%;
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(2, 50%);
+    justify-content: center;
+}
+
+.text-testimonials {
+    grid-row: 1 / 2;
+    margin: .5em auto;
+    padding: 0 0 0 .6em;
+}
+
+.image-testimonials-2 {
+    max-width: 100%;
+    grid-row: 2 / 3;
+    justify-self: center;
+    margin: -.4em 0 0 1em;
+}
+/*Секция Testimonials используем grid конец*/
+
+/* Секция Strong points с учетом поддержки разных браузеров начало */
+.wrapper-strong-points {
+    /* outline: 4px solid peru; */
+    width: 100%;
+    max-width: 1440px;
+    height: 710px;
+    padding: 4em 0 0 0;
+    margin: 10em auto;
+}
+
+.strong-points {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(351px, 1fr));
+    grid-template-rows: 15% 85%;
+    grid-auto-columns: calc(351px - (1rem / 2));
+    column-gap: 30px;
+
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+}
+
+.strong-points > * {
+    scroll-snap-align: start;
+}
+
+.title-strong-points {
+    display: inline-block;
+    width: 48%;
+    transform: rotate(-90deg) translate(8em, 12.5em);
+    grid-area: 1 / 1 / span 1 / 3;
+}
+
+.image-strong-points {
+    max-width: 100%;
+    object-fit: cover;
+    grid-row: 2;
+}
+
+.title-strengst {
+    margin: -.55em 0 0 0;
+    grid-area: 1 / 3 / 2 / span;
+}
+
+.container-list {
+    grid-row: 2;
+    display: flex;
+    row-gap: 28px;
+    flex-direction: column;
+}
+
+.container-list ~ .image-strong-points {
+    margin-left: 2.9em;
+}
+
+.list-strengts {
+    list-style: none;
+    font-weight: 400;
+    font-size: 2.125rem;
+    padding: 0 0 0 2.6em;
+}
+
+.container-list .item-list-strengts:nth-child(even) {
+    padding-top: .1em;
+}
+
+.item-list-strengts {
+    color: #000000;
+    transition: transform .25s;
+
+    &:hover {
+        color: #a52a2a;
+        transform: scale(1.1);
+    }
+}
+/* Секция Strong points с учетом поддержки разных браузеров конец */
+
+/* Breakpoints 1130px начало */
+@media screen and (max-width: 1130.99px) {
+    .wrapper-biography {
+        max-width: 1000px;
+    }
+
+    .title-biography {
+        transform: rotate(-90deg) translate(-3.5em, -.2em);
+    }
+
+    .image-biography {
+        transition: none;
+        box-shadow: none;
+    }
+
+    .image-biography:hover {
+        transform: none;
+        box-shadow: none;
+    }
+
+    .title-designers {
+        transform: rotate(-90deg) translate(14.5em, -15.5em);
+    }
+
+    .wrapper-testimonials {
+        max-width: 1000px;
+    }
+}
+/* Breakpoints 1130px конец */
+
+/* Breakpoints 960px начало */
+@media screen and (max-width: 960.99px) {
+    .wrapper-header {
+        max-width: 900px;
+    }
+
+    .wrapper-biography {
+        max-width: 900px;
+    }
+
+    .image-biography {
+        overflow: hidden;
+    }
+
+    .wrapper-testimonials {
+        max-width: 900px;
+    }
+
+    .grid-column-1 {
+        grid-template-columns: 20% 40% 40% 100%;
+    }
+
+    .image-testimonials-1 {
+        object-fit: contain;
+        overflow: hidden;
+    }
+}
+/* Breakpoints 960px конец */
+
+/* Breakpoints 786px начало */
+@media screen and (max-width: 786.99px) {
+    body {
+        padding: 0 0 4rem 0;
+    }
+
+    main {
+        max-width: 786px;
+    }
+
+    .wrapper-nav {
+        /* width: 100dvw; */
+        max-width: 786px;
+    }
+
+    .wrapper-header {
+        max-width: 786px;
+    }
+
+    .header {
+        margin: 0;
+    }
+    
+    .header-dropdown {
+        position: fixed;
+        top: 90%;
+        bottom: 0;
+        left: 0;
+        z-index: 10000;
+        /* width: 100dvw; */
+        max-width: 786px;
+        background-color: #ffffff;
+    }
+
+    label {
+        display: none;
+    }
+
+    .dropdown-content {
+        display: block;
+        top: 0;
+        left: 0;
+        width: 100%;
+        max-width: 786px;
+        border-radius: 0;
+        padding: 0;
+    }
+    
+    .item-menu-link {
+        width: 90px;
+    }
+    
+    .item-menu-link:focus:before {    
+        width: 100%;
+    }
+
+    .wrapper-hero {
+        max-width: 786px;
+        padding: 28.4em 0;
+    }
+
+    .hero {
+        background-image: url(/src/images/bg-header/bg-header-mobail@2x.jpg);
+        background-position: center bottom;
+        margin: 0;
+    }
+    
+    .hero-box {
+        top: 0;
+        left: 0;
+        transform: translate(0, 0);
+        width: 100%;
+        height: 50%;
+    }
+    
+    .title-hero {
+        font-weight: 400;
+        font-size: 4.375rem;
+        margin: 2.5em auto;
+    }
+    
+    .description-hero {
+        font-size: 1.125rem;
+        margin: -8em auto;
+    }
+
+    /* Секция биография */
+    .wrapper-biography {
+        padding: 0;
+        margin: 5em 0;
+        max-width: 786px;
+        max-height: 952px;
+    }
+    
+    .biography {
+        flex-direction: row;
+        justify-content: space-between;
+        row-gap: 1px;
+    }
+    
+    .subtitle-biography {
+        position: relative;
+        order: 4;
+        width: 60%;
+        font-size: 3.85rem;
+        line-height: 1.333;
+        padding: 0 0 0 .5em;
+        margin: .1em auto;
+    }
+    
+    .subtitle-biography::before {
+        content: '-';
+        position: absolute;
+        left: -12px;
+    }
+    
+    .title-biography {
+        order: 1;
+        display: block;
+        transform: rotate(0) translate(-1em, .5em);
+        width: max-content;
+        font-size: 1.125rem;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .description-biography {
+        order: 0;
+        width: 48%;
+        font-size: 1.125rem;
+    }
+    
+    .list-skills {
+        order: 2;
+        width: 50%;
+        font-size: 1.125rem;
+    }
+    
+    .skill {
+        display: block;
+    }
+    
+    .skill::after {
+        content: '';
+    }
+    
+    .skill::before {
+        content: '-';
+    }
+    
+    .image-biography {
+        order: 5;
+        width: 100%;
+        padding: 0;
+        margin: 0 calc((100% - 450px) / 2);
+        transition: none;
+        box-shadow: none;
+    }
+    
+    .image-biography:hover {
+        transform: none;
+        box-shadow: none;
+    }
+    
+    .text-biography::before {
+        content: none;
+    }
+    
+    .text-biography {
+        order: 3;
+        font-size: 1.875rem;
+        width: 70%;
+        margin: .5em calc((100% - 450px) / 2);;
+        padding: 0;
+    }
+
+    /* Секция дизайнеры */    
+    .designers {
+        padding: 0 1em;
+        margin: 10em 0;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+    }
+    
+    .title-designers {
+        display: block;
+        position: absolute;
+        margin: -3em 0 0 0;
+        padding: 0;
+        transform: rotate(0) translate(0, 0);
+        font-size: 1.125rem;
+        line-height: 1.172;
+    }
+    
+    .container-designer {
+        margin: 0;
+        padding: 0 0 0 .1em;
+    }
+    
+    .image-designer {
+        transition: none;
+        box-shadow: none;
+    }
+    
+    .image-designer:hover {
+        transform: none;
+        box-shadow: none;
+    }
+    
+    .image-designer-stretched > .designer-description {
+        align-self: flex-start;
+        padding-left: 0;
+    }
+
+    /* Секция Testimonials*/
+    .wrapper-testimonials {
+        max-width: 786px;
+    }
+
+    .testimonials {
+        margin: 5em 0 0 0;
+        padding: 0;
+    }
+    
+    .grid-column-1 {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        width: 100%;
+        gap: 1px;
+    }
+    
+    .title-testimonials {
+        order: 0;
+        display: block;
+        width: min-content;
+        position: relative;
+        left: 80%;
+        top: 0;
+        font-size: 1.125rem;
+    }
+    
+    .rotate {
+        transform: rotate(0);
+        place-self: center left;
+    }
+
+    .wrapper-link {
+        order: 3;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap-reverse;
+        justify-content: space-evenly;
+        gap: 0;
+    }
+    
+    .grid-row-1 {
+        width: 25%;
+        margin: .2em 0 0 0;
+        padding: 1em;
+        /* order: 3; */
+    }
+    
+    .grid-row-2 {
+        width: 25%;
+        margin: .2em 0 0 0;
+        padding: 1em;
+        /* order: 4; */
+    }
+    
+    .grid-row-3 {
+        width: 25%;
+        margin: .2em 0 0 0;
+        padding: 1em;
+        /* order: 5; */
+    }
+    
+    .image-testimonials-1 {
+        display: none;
+    }
+    
+    .image-testimonials-2 {
+        order: 2;
+        padding: .5em calc(100% - 410px / 2);
+    }
+    
+    .grid-column-2 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        max-width: 100%;
+        gap: 1px;
+    }
+    
+    .text-testimonials {
+        order: 1;
+        width: 100%;
+        height: 25%;
+        font-size: 1.875rem;
+        margin: 1em 0 0 6em;
+        padding: 0 0 0 .5em;
+    } 
+    
+    /* Секция Strong points*/
+    .wrapper-strong-points {
+        margin: 5em auto;
+    }
+
+    .title-strong-points {
+        width: min-content;
+        transform: rotate(-90deg) translate(1.5em, 12.5em);
+    }
+}
+/* Breakpoints 786px конец */
+
+/* Breakpoints 450px начало */
+@media screen and (max-width: 450.99px) {
+    body {
+        padding: 0 0 4rem 0;
+    }
+
+    main {
+        max-width: 450px;
+    }
+
+    .wrapper-nav {
+        max-width: 450px;
+    }
+
+    .wrapper-header {
+        max-width: 450px;
+    }
+
+    .header {
+        margin: 0;
+    }
+    
+    .header-dropdown {
+        position: fixed;
+        top: 86%;
+        bottom: 0;
+        left: 0;
+        z-index: 10000;
+        max-width: 450px;
+        background-color: #ffffff;
+    }
+
+    label {
+        display: none;
+    }
+
+    .dropdown-content {
+        display: block;
+        top: 0;
+        left: 0;
+        width: 100%;
+        max-width: 450px;
+        border-radius: 0;
+        padding: 1em 0 0 0;
+    }
+    
+    .item-menu-link {
+        width: 90px;
+    }
+    
+    .item-menu-link:focus:before {    
+        width: 100%;
+    }
+
+    .wrapper-hero {
+        max-width: 450px;
+        padding: 24em 0;
+    }
+
+    .hero {
+        background-image: url(/src/images/bg-header/bg-header-mobail@1x.jpg);
+        background-position: center bottom;
+        margin: 0;
+    }
+    
+    .hero-box {
+        top: 0;
+        left: 0;
+        transform: translate(0, 0);
+        width: 100%;
+        height: 45%;
+    }
+    
+    .title-hero {
+        font-weight: 400;
+        font-size: 4.375rem;
+        margin: 1.6em auto;
+    }
+    
+    .description-hero {
+        font-size: 1.125rem;
+        margin: -5.5em auto;
+    }
+
+    /* Секция биография */
+    .wrapper-biography {
+        padding: 0 0 0 1em;
+        margin: 4.5em 0;
+        max-width: 450px;
+        max-height: 952px;
+    }
+    
+    .biography {
+        flex-direction: row;
+        justify-content: space-between;
+        row-gap: 1px;
+    }
+    
+    .subtitle-biography {
+        position: relative;
+        order: 4;
+        width: 100%;
+        font-size: 3.85rem;
+        line-height: 1.333;
+        padding: 0 0 0 .25em;
+        margin: .85em 0 0 .35em;
+    }
+    
+    .subtitle-biography::before {
+        content: '-';
+        position: absolute;
+        left: -12px;
+    }
+    
+    .title-biography {
+        order: 1;
+        display: block;
+        transform: rotate(0) translate(-1em, .5em);
+        width: max-content;
+        font-size: 1.125rem;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .description-biography {
+        order: 0;
+        width: 48%;
+        font-size: 1.125rem;
+    }
+    
+    .list-skills {
+        order: 2;
+        width: 50%;
+        font-size: 1.125rem;
+    }
+    
+    .skill {
+        display: block;
+    }
+    
+    .skill::after {
+        content: '';
+    }
+    
+    .skill::before {
+        content: '-';
+    }
+    
+    .image-biography {
+        order: 5;
+        width: 100%;
+        object-fit: cover;
+        padding: 0;
+        margin: 2em calc((100% - 450px) / 2);
+        transition: none;
+        box-shadow: none;
+    }
+    
+    .image-biography:hover {
+        transform: none;
+        box-shadow: none;
+    }
+    
+    .text-biography::before {
+        content: none;
+    }
+    
+    .text-biography {
+        order: 3;
+        font-size: 1.875rem;
+        width: 98%;
+        margin: 0 calc((100% - 450px) / 2);;
+        padding: 0 0 0 .5em;
+    }
+
+    /* Секция дизайнеры */    
+    .designers {
+        margin: 8.6em 0;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+    }
+    
+    .title-designers {
+        display: block;
+        position: absolute;
+        margin: -3em 0 0 0;
+        padding: 0;
+        transform: rotate(0) translate(0, 0);
+        font-size: 1.125rem;
+        line-height: 1.172;
+    }
+    
+    .container-designer {
+        margin: 0;
+        padding: 0 0 0 .1em;
+    }
+    
+    .image-designer {
+        transition: none;
+        box-shadow: none;
+    }
+    
+    .image-designer:hover {
+        transform: none;
+        box-shadow: none;
+    }
+    
+    .image-designer-stretched > .designer-description {
+        align-self: flex-start;
+        padding-left: 0;
+    }
+
+    /* Секция Testimonials*/
+    .wrapper-testimonials {
+        max-width: 450px;
+    }
+
+    .testimonials {
+        margin: -4em 0 0 0;
+        padding: 0;
+    }
+    
+    .grid-column-1 {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        width: 100%;
+        gap: 1px;
+    }
+    
+    .title-testimonials {
+        order: 0;
+        display: block;
+        width: min-content;
+        position: relative;
+        left: 71%;
+        top: 0;
+        font-size: 1.125rem;
+    }
+    
+    .rotate {
+        transform: rotate(0);
+        place-self: center left;
+    }
+
+    .wrapper-link {
+        order: 3;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 0;
+    }
+    
+    .grid-row-1 {
+        width: 49%;
+        margin: .2em 0 0 0;
+        padding: 1.5em;
+        /* order: 3; */
+    }
+    
+    .grid-row-2 {
+        width: 49%;
+        margin: .2em 0 0 0;
+        padding: .5em;
+        /* order: 4; */
+    }
+    
+    .grid-row-3 {
+        width: 49%;
+        margin: 0;
+        padding: 0 0 0 1.5em ;
+        /* order: 5; */
+    }
+    
+    .image-testimonials-1 {
+        display: none;
+    }
+    
+    .image-testimonials-2 {
+        order: 2;
+        padding: 1.5em 0 0 .5em;
+    }
+    
+    .grid-column-2 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        max-width: 100%;
+        gap: 1px;
+    }
+    
+    .text-testimonials {
+        order: 1;
+        width: 150%;
+        font-size: 1.875rem;
+        margin: 1em 0 0 2em;
+        padding: 0;
+    } 
+    
+    /* Секция Strong points*/
+    .wrapper-strong-points {
+        margin: 2.3em auto;
+    }
+
+    .strong-points {
+        grid-template-columns: minmax(240px, 1fr) repeat(3, minmax(301px, 1fr));
+        column-gap: 15px;
+    }
+
+    .title-strong-points {
+        width: min-content;
+        transform: rotate(0) translate(16em, -1.5em);
+    }
+
+    .title-strengst {
+        grid-area: 1 / 1 / 2 / 2;
+        font-size: 4rem;
+        margin: .1em 0 0 0;
+    }
+
+    .container-list {
+        grid-area: 2 / 1 / span 1 / 2;
+    }
+
+    .list-strengts {
+        font-size: 1.5rem;
+        padding: 0 0 0 1em;
+    }
+
+    .container-list .item-list-strengts:nth-child(even) {
+        padding-top: .48em;
+    }
+
+    .container-list .item-list-strengts:nth-child(odd) {
+        padding-top: .155em;
+    }
+
+    .image-strong-points {
+        order: 1;
+    }
+}
+/* Breakpoints 450px конец */
