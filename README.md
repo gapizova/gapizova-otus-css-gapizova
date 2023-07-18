@@ -46,10 +46,12 @@ npm run build-prod
 
 ## Deploy
 Проект был развернут с помощью GitHub Pages. Исли использовать Deploy from a brunch, необходимо указать ветку main в качестве ветки для развертывания, а дерикторию выбрать /docs.
-Мною был использован второй метод развертывания GitHub  Action. ДЛя этого метода используется установленное расширение Webpack и скрипт .github/workflows/webpack.yml
+Мною был использован второй метод развертывания GitHub  Action. Для этого метода используется установленное расширение Webpack и скрипт .github/workflows/webpack.yml
 
 ## Lighthouse
-Результаты анализа предмтавлены ниже
-<img src="/Lighthouse-descktop.png" border="5px solid red"/>
+Результаты анализа:
 
-<img src="/Lighthouse-mobile.png" border="5px solid red"/>
+<img src="/Lighthouse-descktop.png"/>
+
+
+<img src="/Lighthouse-mobile.png"/>
