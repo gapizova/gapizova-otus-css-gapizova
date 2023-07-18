@@ -50,8 +50,9 @@ npm run build-prod
 
 ## Lighthouse
 Результаты анализа:
-
-<img src="/Lighthouse-descktop.png"/>
-
-
-<img src="/Lighthouse-mobile.png"/>
+<kdb>
+    <img src="/Lighthouse-descktop.png"/ >
+</kdb>
+<kdb>
+    <img src="/Lighthouse-mobile.png"/>
+</kdb>
